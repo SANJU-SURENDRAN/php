@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Armstrong or Not</title>
+</head>
+<body>
+<form method="post">
+<input type="text" name="num" value="" placeholder="Enter a Number"/>
+<input type="submit" name="submit" value="submit"/>
+</form>
+<?php
+$num = $_POST['num'];
+$orgNum = $num;
+$sum = 0;
+$numDigit = strlen($num);
+while ($num > 0) {
+     $digit = $num % 10;
+     $sum += pow($digit, $numDigit);
+     $num = (int)($num / 10);
+}
+
+if ($sum == $orgNum) {
+    echo "$orgNum is an Armstrong Number.\n";
+} else {
+    echo "$orgNum is not an Armstrong Number.\n";
+}
+?>
+</body>
+</html>
