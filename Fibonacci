@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Fibonacci</title>
+</head>
+<body>
+<form method="post">
+<input type="text" name="num" value="" placeholder="Enter the Limit"/>
+<input type="submit" name="submit" value="submit"/>
+</form>
+<?php
+$num = $_POST['num'];
+$maxNum = $num;
+$FT = 0;
+$ST = 1;
+echo "Fibonacci Series up to $maxNum : $FT , $ST";
+while (($FT + $ST) <= $maxNum) {
+     $NXT = $FT + $ST;
+     echo " ,$NXT";
+     $FT = $ST;
+     $ST = $NXT;
+}
+?>
+</body>
+</html>
